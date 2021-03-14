@@ -1,7 +1,4 @@
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '*/15 * * * *'
   script:
     run: |
       var result = await helpers.axios.get("https://${{secrets.IZ_ID}}-iz.impfterminservice.de/rest/suche/termincheck?plz=${{secrets.PLZ}}&leistungsmerkmale=${{secrets.IMPFSTOFFE}}");
